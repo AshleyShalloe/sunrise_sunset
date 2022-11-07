@@ -1,0 +1,125 @@
+<html>
+<head>
+    <style>
+        html{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<input type="number" id="latitude" />
+<input type="number" id="longitude" />
+<input type="date" id="inputdate" />
+
+<button onclick="readInputsDoThing()">Go</button>
+
+</body>
+<script>
+'use strict'
+
+// translates degrees to radians
+function sind(angleDegrees){
+    return Math.sin(angleDegrees*Math.PI/180);
+};
+
+function cosd(angleDegrees){
+    return Math.cos(angleDegrees*Math.PI/180);
+};
+
+// days since epoch
+// epoch = 2000-01-01 12:00
+// n
+function getJulianDay(inputDate){
+    var epoch = new Date("2000-01-01T12:00:00");
+    var now = new Date();
+    var datediff = Math.round(((inputDate ? inputDate : now) - epoch) / (1000 * 60 * 60 * 24))
+    return datediff
+}
+
+// Julian day to datetime object
+function julianToDatetime(julianDay){
+    var dateObj = new Date((julianDay-2440587.5)*864e5);
+    return dateObj
+}
+
+// Mean Solar Time
+// J*
+function getMeanSolarTime(longitude, inputDate){
+    return getJulianDay(inputDate) - (longitude / 360)
+}
+
+// Solar mean anomaly
+// M
+function getSolarMeanAnomaly(longitude, inputDate){
+    return (357.5291 + (0.98560028 * getMeanSolarTime(longitude, inputDate))) % 360
+}
+
+// Equation of the centre
+// C
+function getEquationOfTheCentre(longitude, inputDate){
+    var sma = getSolarMeanAnomaly(longitude, inputDate);
+    var coefficientEarthEOC = 1.9148;
+    return (coefficientEarthEOC * sind(sma)) + (0.0200 * sind(2 * sma)) + (0.0003 * sind(3 * sma))
+}
+
+// Ecliptic longitude
+// lambda
+function getEclipticLongitude(longitude, inputDate){
+    var argumentOfPerihelion = 102.9372;
+    var solarMeanAnomaly = getSolarMeanAnomaly(longitude, inputDate);
+    var equationOfTheCentre = getEquationOfTheCentre(longitude, inputDate);
+    return (solarMeanAnomaly + equationOfTheCentre + 180 + argumentOfPerihelion) % 360
+}
+
+// Solar transit
+// Jtransit
+function getSolarTransit(longitude, inputDate){
+    var noon = 2451545.0; // noon of the equivalent Julian year reference
+    var sma = getSolarMeanAnomaly(longitude, inputDate);
+    var lambda = getEclipticLongitude(longitude, inputDate);
+    var meanSolarTime = getMeanSolarTime(longitude, inputDate);
+    var equationOfTime = (0.0053 * sind(sma)) - (0.0069 * sind(2 * lambda)); // simplified version, apparently
+    return noon + meanSolarTime + equationOfTime
+}
+
+// Declination of the Sun
+// sin delta
+function getDeclinationOfSun(longitude, inputDate){
+    var lambda = getEclipticLongitude(longitude, inputDate);
+    var sinDelta = sind(lambda) * sind(23.44);
+    return sinDelta
+}
+
+// Hour angle
+// omega nought
+// not bothering with elevation correction
+function getHourAngle(northLatitude, longitude, inputDate){
+    var sunDeclination = getDeclinationOfSun(longitude, inputDate);
+    var numerator = sind(-0.83) - (sind(northLatitude) * sunDeclination);
+    var denominator = cosd(northLatitude) * Math.cos(Math.asin(sunDeclination));
+    return Math.acos(numerator / denominator) / (Math.PI/180)
+}
+
+// takes in latitude, longitude and a date object
+// returns an object with sunrise and sunset keys
+// defaults to today if no inputDate provided
+function getSunriseSunset(northLatitude, longitude, inputDate){
+    var solarTransit = getSolarTransit(longitude, inputDate);
+    var hourAngle = getHourAngle(northLatitude, longitude, inputDate);
+    var sunrise = solarTransit - (hourAngle / 360); // Julian date of sunrise
+    var sunset = solarTransit + (hourAngle / 360); // Julian date of sunset
+    // convert to something actually usable
+    var sunrise = julianToDatetime(sunrise);
+    var sunset = julianToDatetime(sunset);
+    return {"sunrise": sunrise, "sunset": sunset}
+}
+
+function readInputsDoThing(){
+    var latitude = parseFloat(document.getElementById("latitude").value);
+    var longitude = parseFloat(document.getElementById("longitude").value);
+    var inputDate = new Date(document.getElementById("inputdate").value)
+    console.log(getSunriseSunset(latitude, longitude, inputDate))
+}
+</script>
+</html>
