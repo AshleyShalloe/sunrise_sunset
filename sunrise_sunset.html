@@ -18,8 +18,8 @@
             overflow-y: auto;
         }
         #maingridtop{
-            background: white;
-            color: black;
+            background: rgba(255, 255, 255, 0.577);
+            color: #2c213d;
             height: 50vh;
             width: 100vw;
             display: grid;
@@ -32,7 +32,7 @@
             font-size: 1.2em;
         }
         #maingridbottom{
-            background: black;
+            background: #2c213d;
             height: 50vh;
             width: 100vw;
             display: grid;
@@ -65,11 +65,41 @@
         h1, h2, h3{
             text-align: center;
         }
+        .skeuButton{
+            background: white;
+            color: #2c213d;
+            box-shadow: 2px 2px 4px #80808080, -2px -2px 4px #ffffff6b;
+            border-radius: 0.4em;
+            border: 1px solid rgb(237, 237, 237);
+            transition: border 0.5s;
+            cursor: pointer;
+            user-select: none;
+        }
+        .skeuButton:active{
+            color: darkblue;
+            box-shadow: inset 2px 2px 4px #80808080, inset -2px -2px 4px #ffffff6b;
+        }
+        .skeuButton:hover{
+            border: 1px solid rgb(217, 217, 217);
+        }
+        #centralCircle{
+            width: 60vw;
+            height: 60vw;
+            background: orange;
+            border-radius: 100%;
+            z-index: -10;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
 
 <div id="maingrid">
+    <div id="centralCircle"></div>
+
     <div id="maingridtop">
         <h1>Sunrise/Sunset Calculator</h1>
 
@@ -80,11 +110,11 @@
             <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
             <tr><td colspan=2>
                 <div id="prevfwdbuttoncluster">
-                    <button onclick="readInputsDoThing()" style="grid-column-start: 1; grid-column-end: 4; grid-row-start: 1;">Go</button>
-                    <button onclick="askNicelyForLocation()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 2;">Ask location test</button>
-                    <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1; grid-row-start: 3;">Previous</button>
-                    <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2; grid-row-start: 3;">Today</button>
-                    <button onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3; grid-row-start: 3;">Next</button>
+                    <button class="skeuButton" onclick="readInputsDoThing()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 1;">Go</button>
+                    <button class="skeuButton" onclick="askNicelyForLocation()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 2;">Ask location test</button>
+                    <button class="skeuButton" onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1; grid-row-start: 3;">Previous</button>
+                    <button class="skeuButton" onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2; grid-row-start: 3;">Today</button>
+                    <button class="skeuButton" onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3; grid-row-start: 3;">Next</button>
                 </div>
             </td></tr>
         </table>
