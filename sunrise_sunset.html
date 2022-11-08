@@ -2,17 +2,31 @@
 <head>
     <style>
         html{
-            font-family: sans-serif;
+            font-family: monospace;
         }
     </style>
 </head>
 <body>
 
-<input type="number" id="latitude" />
-<input type="number" id="longitude" />
-<input type="date" id="inputdate" />
+<h1>Sunrise/Sunset Calculator</h1>
+
+<h2>Input</h2>
+<table>
+    <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
+    <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
+    <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
+</table>
 
 <button onclick="readInputsDoThing()">Go</button>
+<button onclick="incrementDateInput(-1); readInputsDoThing()">Previous</button>
+<button onclick="initDateInput(); readInputsDoThing()">Today</button>
+<button onclick="incrementDateInput(1); readInputsDoThing()">Next</button>
+
+<h2>Result</h2>
+<table>
+    <tr><td>Sunrise</td><td><span id="sunriseResult"></span></td></tr>
+    <tr><td>Sunset</td><td><span id="sunsetResult"></span></td></tr>
+</table>
 
 </body>
 <script>
@@ -118,8 +132,33 @@ function getSunriseSunset(northLatitude, longitude, inputDate){
 function readInputsDoThing(){
     var latitude = parseFloat(document.getElementById("latitude").value);
     var longitude = parseFloat(document.getElementById("longitude").value);
-    var inputDate = new Date(document.getElementById("inputdate").value)
-    console.log(getSunriseSunset(latitude, longitude, inputDate))
+    var inputDate = new Date(document.getElementById("inputdate").value);
+    var result = getSunriseSunset(latitude, longitude, inputDate);
+
+    document.getElementById("sunriseResult").innerText = result["sunrise"];
+    document.getElementById("sunsetResult").innerText = result["sunset"];
 }
+
+function initDateInput(){
+    var now = new Date();
+    document.getElementById("inputdate").valueAsDate = now;
+}
+
+function incrementDateInput(inputDays){
+    `
+    Increment the date value by the input number of days.
+    Accepts negative values
+    `
+    var inputDateState = document.getElementById("inputdate").valueAsDate
+    inputDateState.setDate(inputDateState.getDate() + inputDays);
+     document.getElementById("inputdate").valueAsDate = inputDateState;
+}
+
+function init(){
+    initDateInput();
+    readInputsDoThing();
+}
+
+init();
 </script>
 </html>
