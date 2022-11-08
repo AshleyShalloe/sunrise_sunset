@@ -71,6 +71,7 @@
         </table>
 
         <button onclick="readInputsDoThing()">Go</button>
+        <button onclick="askNicelyForLocation()">Ask location test</button>
         <div id="prevfwdbuttoncluster">
             <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1;">Previous</button>
             <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2;">Today</button>
@@ -82,6 +83,7 @@
         <table id="resulttable">
             <tr><td><b>Sunrise</b>//</td><td><span id="sunriseResult"></span></td></tr>
             <tr><td><b>Sunset</b> //</td><td><span id="sunsetResult"></span></td></tr>
+            <tr><td colspan=2 style="text-align: center; font-size: medium"><span id="daylightHoursResult"></span> daylight hours</td></tr>
         </table>
     </div>
 
@@ -191,9 +193,13 @@ function readInputsDoThing(){
     var longitude = parseFloat(document.getElementById("longitude").value);
     var inputDate = new Date(document.getElementById("inputdate").value);
     var result = getSunriseSunset(latitude, longitude, inputDate);
+    var sunrise = result["sunrise"];
+    var sunset = result["sunset"];
+    var daylight = +((sunset - sunrise) / 1000 / 60 / 60).toFixed(2); // the plus gets rid of trailing zeros. Decimal hours isn't really elegant here, but whatever
 
-    document.getElementById("sunriseResult").innerText = result["sunrise"];
-    document.getElementById("sunsetResult").innerText = result["sunset"];
+    document.getElementById("sunriseResult").innerText = sunrise;
+    document.getElementById("sunsetResult").innerText = sunset;
+    document.getElementById("daylightHoursResult").innerText = daylight;
 }
 
 function initDateInput(){
@@ -209,6 +215,21 @@ function incrementDateInput(inputDays){
     var inputDateState = document.getElementById("inputdate").valueAsDate
     inputDateState.setDate(inputDateState.getDate() + inputDays);
      document.getElementById("inputdate").valueAsDate = inputDateState;
+}
+
+function askNicelyForLocation(){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(useLocation);
+    }
+    else{
+        console.error("No location for you");
+    }
+}
+
+function useLocation(position){
+    console.log(position)
+    document.getElementById("latitude").value = position.coords.latitude;
+    document.getElementById("longitude").value = position.coords.longitude;
 }
 
 function init(){
