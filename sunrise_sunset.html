@@ -14,6 +14,9 @@
             display: grid;
             justify-content: center;
         }
+        #maingridtop, #maingridbottom{
+            overflow-y: auto;
+        }
         #maingridtop{
             background: white;
             color: black;
@@ -45,20 +48,22 @@
         #prevfwdbuttoncluster button{
             display: inline-block;
         }
-        #prevfwdbuttoncluster button:nth-child(0), #prevfwdbuttoncluster button:nth-child(1){
-            display: inline-block;
-            margin-right: 4px;
-        }
-        #prevfwdbuttoncluster button:nth-child(1), #prevfwdbuttoncluster button:nth-child(2){
-            display: inline-block;
-            margin-right: 4px;
-        }
         #prevfwdbuttoncluster{
+            margin-top: 10px;
             display: grid;
             justify-items: stretch;
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
         }
         button{
             padding: 10px;
+        }
+        #inputtable{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        h1, h2, h3{
+            text-align: center;
         }
     </style>
 </head>
@@ -68,26 +73,29 @@
     <div id="maingridtop">
         <h1>Sunrise/Sunset Calculator</h1>
 
-        <h2>Input</h2>
         <table id="inputtable">
+            <tr><td colspan=2><h2>Input</h2></td></tr>
             <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
             <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
             <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
+            <tr><td colspan=2>
+                <div id="prevfwdbuttoncluster">
+                    <button onclick="readInputsDoThing()" style="grid-column-start: 1; grid-column-end: 4; grid-row-start: 1;">Go</button>
+                    <button onclick="askNicelyForLocation()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 2;">Ask location test</button>
+                    <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1; grid-row-start: 3;">Previous</button>
+                    <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2; grid-row-start: 3;">Today</button>
+                    <button onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3; grid-row-start: 3;">Next</button>
+                </div>
+            </td></tr>
         </table>
 
-        <button onclick="readInputsDoThing()">Go</button>
-        <button onclick="askNicelyForLocation()" style="display: none;">Ask location test</button>
-        <div id="prevfwdbuttoncluster">
-            <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1;">Previous</button>
-            <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2;">Today</button>
-            <button onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3;">Next</button>
-        </div>
+        
     </div>
     <div id="maingridbottom">
         <h2>Result</h2>
         <table id="resulttable">
-            <tr><td><div class="sunlabel">▲</div></td><td><span id="sunriseResult"></span></td></tr>
-            <tr><td><div class="sunlabel">▼</div></td><td><span id="sunsetResult"></span></td></tr>
+            <tr><td><div class="sunlabel">▲</div></td><td style="text-align: center; padding: 0.3em;"><span id="sunriseResult"></span></td></tr>
+            <tr><td><div class="sunlabel">▼</div></td><td style="text-align: center; padding: 0.3em;"><span id="sunsetResult"></span></td></tr>
             <tr><td colspan=2 style="text-align: center; font-size: medium"><span id="daylightHoursResult"></span> daylight hours</td></tr>
         </table>
     </div>
