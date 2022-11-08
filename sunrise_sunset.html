@@ -24,7 +24,9 @@
             align-items: end;
             justify-content: center;
             align-content: space-evenly;
-            font-size: larger;
+        }
+        #maingridtop, #inputtable{
+            font-size: 1.2em;
         }
         #maingridbottom{
             background: black;
@@ -55,6 +57,9 @@
             display: grid;
             justify-items: stretch;
         }
+        button{
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -64,14 +69,14 @@
         <h1>Sunrise/Sunset Calculator</h1>
 
         <h2>Input</h2>
-        <table>
+        <table id="inputtable">
             <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
             <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
             <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
         </table>
 
         <button onclick="readInputsDoThing()">Go</button>
-        <button onclick="askNicelyForLocation()">Ask location test</button>
+        <button onclick="askNicelyForLocation()" style="display: none;">Ask location test</button>
         <div id="prevfwdbuttoncluster">
             <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1;">Previous</button>
             <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2;">Today</button>
@@ -81,8 +86,8 @@
     <div id="maingridbottom">
         <h2>Result</h2>
         <table id="resulttable">
-            <tr><td><b>Sunrise</b>//</td><td><span id="sunriseResult"></span></td></tr>
-            <tr><td><b>Sunset</b> //</td><td><span id="sunsetResult"></span></td></tr>
+            <tr><td><div class="sunlabel">▲</div></td><td><span id="sunriseResult"></span></td></tr>
+            <tr><td><div class="sunlabel">▼</div></td><td><span id="sunsetResult"></span></td></tr>
             <tr><td colspan=2 style="text-align: center; font-size: medium"><span id="daylightHoursResult"></span> daylight hours</td></tr>
         </table>
     </div>
@@ -218,21 +223,28 @@ function incrementDateInput(inputDays){
 }
 
 function askNicelyForLocation(){
-    if (navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(useLocation);
-    }
-    else{
-        console.error("No location for you");
-    }
+    navigator.geolocation.getCurrentPosition((position)=> {
+        const p=position.coords;
+        console.log(p.latitude,p.longitude);
+    })
 }
 
-function useLocation(position){
-    console.log(position)
-    document.getElementById("latitude").value = position.coords.latitude;
-    document.getElementById("longitude").value = position.coords.longitude;
-}
+// function to read url parameters and jump to a specific nucleotide
+  function url_param_handler(){
+    var url_string = window.location.href
+    var url = new URL(url_string)
+    var lat = url.searchParams.get("lat")
+    if (lat){
+      document.getElementById("latitude").value = lat
+    }
+    var lon = url.searchParams.get("lon")
+    if (lon){
+      document.getElementById("longitude").value = lon
+    }
+  }
 
 function init(){
+    url_param_handler();
     initDateInput();
     readInputsDoThing();
 }
