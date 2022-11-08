@@ -138,6 +138,9 @@
 <script>
 'use strict'
 
+  
+// trig stuff
+ 
 // translates degrees to radians
 function sind(angleDegrees){
     return Math.sin(angleDegrees*Math.PI/180);
@@ -146,6 +149,9 @@ function sind(angleDegrees){
 function cosd(angleDegrees){
     return Math.cos(angleDegrees*Math.PI/180);
 };
+    
+ 
+ // sunrise equation stuff
 
 // days since epoch
 // epoch = 2000-01-01 12:00
@@ -234,6 +240,9 @@ function getSunriseSunset(northLatitude, longitude, inputDate){
     var sunset = julianToDatetime(sunset);
     return {"sunrise": sunrise, "sunset": sunset}
 }
+    
+
+// UI stuff
 
 function readInputsDoThing(){
     var latitude = parseFloat(document.getElementById("latitude").value);
@@ -271,8 +280,8 @@ function askNicelyForLocation(){
     })
 }
 
-// function to read url parameters and jump to a specific nucleotide
-  function url_param_handler(){
+// function to read url parameters and do stuff with them
+function url_param_handler(){
     var url_string = window.location.href
     var url = new URL(url_string)
     var lat = url.searchParams.get("lat")
@@ -285,6 +294,9 @@ function askNicelyForLocation(){
     }
   }
 
+ 
+ // init
+ 
 function init(){
     url_param_handler();
     initDateInput();
