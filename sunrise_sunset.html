@@ -1,32 +1,89 @@
 <html>
 <head>
+    <title>Sunrise/Sunset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
     <style>
         html{
             font-family: monospace;
+        }
+        body{
+            margin: 0 auto;
+        }
+        #maingrid{
+            display: grid;
+            justify-content: center;
+        }
+        #maingridtop{
+            background: white;
+            color: black;
+            height: 50vh;
+            width: 100vw;
+            display: grid;
+            justify-items: stretch;
+            align-items: end;
+            justify-content: center;
+            align-content: space-evenly;
+            font-size: larger;
+        }
+        #maingridbottom{
+            background: black;
+            height: 50vh;
+            width: 100vw;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            
+        }
+        #maingridbottom, #resulttable{
+            color: white;
+            font-size: x-large;
+        }
+        #prevfwdbuttoncluster button{
+            display: inline-block;
+        }
+        #prevfwdbuttoncluster button:nth-child(0), #prevfwdbuttoncluster button:nth-child(1){
+            display: inline-block;
+            margin-right: 4px;
+        }
+        #prevfwdbuttoncluster button:nth-child(1), #prevfwdbuttoncluster button:nth-child(2){
+            display: inline-block;
+            margin-right: 4px;
+        }
+        #prevfwdbuttoncluster{
+            display: grid;
+            justify-items: stretch;
         }
     </style>
 </head>
 <body>
 
-<h1>Sunrise/Sunset Calculator</h1>
+<div id="maingrid">
+    <div id="maingridtop">
+        <h1>Sunrise/Sunset Calculator</h1>
 
-<h2>Input</h2>
-<table>
-    <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
-    <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
-    <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
-</table>
+        <h2>Input</h2>
+        <table>
+            <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
+            <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
+            <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
+        </table>
 
-<button onclick="readInputsDoThing()">Go</button>
-<button onclick="incrementDateInput(-1); readInputsDoThing()">Previous</button>
-<button onclick="initDateInput(); readInputsDoThing()">Today</button>
-<button onclick="incrementDateInput(1); readInputsDoThing()">Next</button>
-
-<h2>Result</h2>
-<table>
-    <tr><td>Sunrise</td><td><span id="sunriseResult"></span></td></tr>
-    <tr><td>Sunset</td><td><span id="sunsetResult"></span></td></tr>
-</table>
+        <button onclick="readInputsDoThing()">Go</button>
+        <div id="prevfwdbuttoncluster">
+            <button onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1;">Previous</button>
+            <button onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2;">Today</button>
+            <button onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3;">Next</button>
+        </div>
+    </div>
+    <div id="maingridbottom">
+        <h2>Result</h2>
+        <table id="resulttable">
+            <tr><td><b>Sunrise</b>//</td><td><span id="sunriseResult"></span></td></tr>
+            <tr><td><b>Sunset</b> //</td><td><span id="sunsetResult"></span></td></tr>
+        </table>
+    </div>
 
 </body>
 <script>
