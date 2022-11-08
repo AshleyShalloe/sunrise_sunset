@@ -18,8 +18,6 @@ Let's recreate the halcyon days of having a app that just states sunrise and sun
 
 * Ask user for location and use that to populate lat/lon
 * Alternatively, figure out approximately where the user is using some other metadata
-* Push the output to the webpage instead of to the console
-* Fancy CSS theme
-* Daylight hours calculation
+* Fancier CSS theme
 * Maybe some sort of clickable map thing, like in Windows setup
 * Or a list of cities...
