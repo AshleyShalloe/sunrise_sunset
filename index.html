@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Sunrise/Sunset</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -7,20 +8,25 @@
     <link rel="icon" href="data:image/png;base64,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" />
     <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAABb2lDQ1BpY2MAACiRdZE7SwNBFIU/N4qiEQstRCy2UElhQBTEUmORJkiICr6azSabCMm67G4QsRVsLAIWoo2vwn+grWCrIAiKIGLlD/DViKx3kkBEdJbZ+3FmzmXmDGiJgln0GoegaPtuKh7T5+YX9OZn2mhBI0rEMD1nIplM8O/4uKVB1Zuo6vX/vj9HWybrmdDQIjxqOq4vPC6cWPUdxVvCXWbeyAgfCA+6ckDhS6Wnq/ykOFflN8XuTGoSNNVTz/3g9A82825ROCLcVyyUzNp51E3CWXt2WmqPzF48UsSJoZOmxDIFfMllGVsy+9s3VPFNsSIeU/4Oa7jiyJEX76CoJemalWqJnpWvwJrK/XeenjUyXO0ejkHTYxC89kPzNnyVg+DzMAi+jiD0AOd23b8iOY29i16ua3370LEBpxd1Lb0DZ5vQfe8YrlGRQjI1y4KXE2ifh85raF2sZlVb5/gOZtblia5gdw8GZH/H0jfys2gEkOh1CAAAAAlwSFlzAAAuIwAALiMBeKU/dgAAGP5JREFUeNrt3QmUXXV9B/A3M7ZalR5eW5+11L5OVYQ6Im5UoQNaaKWgIi4tqAeoAsWqlaKoBaVVKWBdkCrgke2wgyhLVBYBWYY1kKQhA0kgMPCQpU8kU7awp7/LPGpIMmSWt9x7/5/POX/vE0jy5ndv5ve9v3vnvr4KUDorbz55Zbt/z74NP9KnslAe/kJDQk28Z99ohAcQAIDyNXgBAQQAQJMXDkAAAI0ewQAEANDsEQpAAADNHqEABADQ8BEIQAAADR+BAAQA0PARCEAAAE0fYQAEANDwEQhAAEDTB2EABAA0fRAGQABA0wdhAAEANH0QBhAAQOMHQQABADR9EAYQAEDTB2EAAQA0fhAEEABA4wdBAAEANH0QBhAA0PgBQQABAI0fEAQQAND4AUEAAQBNHxAGEADQ+AFBAAEAjR8QBBAA0PgBQQABAI0fEAQQAND8QQgAAQCNHwQBEADQ+EEQQABA4wcEAQQANH5AEEAAQPMHhAAEADR+QBBAAEDjBwQBBAA0f0AIQABA4wcEAQQANH5AEEAAQPMHhAAEADR+QBBAAEDzB4QABAA0fkAQQADQ/AGEAAQAjR9AEEAA0PwBhAAEAM0fQAhAAND4AQQBAQDNH0AIEADQ/AGEAAEAjR9AEBAA0PwBhAABAM0fQAgQAND4AQQBAQDNH0AIEADQ/AGEAAFA8wcQAoQAAUDjBxAEEAA0fwAhAAFA8wcQAhAANH8AIQABQPMHEAIQADR/ACEAAUDjBxAEEAA0fwAhQABA8wcQAgQANH8AIUAAQPMHEAIEADR/ACFAAND8ARACBADNHwAhQADQ/AEQAgQAzR8AIUAA0PwBEAIEAM0fACFAAND8ARACBADNHwAhQADQ/AEQAgQAzR8AIUAA0PwBEAIEAM0fACFAAND8AYQAAQDNH0AIEAA0fwCEAAFA8wdACCibfrsfAEwAnP0DYAogAGj+AAgBAoDmD4AQIABo/gAIAQKA5g+AECAAaP4ACAF55ccAASDFkOPsHwDSmwKUPgBo/gAIAYkFAM0fACEgsQCg+QMgBEzOTYAAkGKocfYPAOlNAUoXADR/AISAxAKA5g+AEDA17gEAgBSDjLN/AEhvClCKAKD5AyAEJBYANH8AhIDpcw8AAKQYXpz9A0B6U4DCBgDNHwAhYOZcAgCAFEOLs38ASG8KULgAoPkDIAQkFgA0fwCEgPZwDwAApBhUnP0DQHpTgEJMADR/AIpkaHA49/3VJQAAaLNFF+z1VN7fY+5HFM7+ASiqPF8KMAEAgBTDibN/AEhvCpDbAKD5AyAEdI5LAACQYihx9g8A6U0BchcANH8AhIDOcwkAAFIMI87+ASC9KYAJAACYADj7B4AUpgAmAABgAuDsHwBSmAL0PABo/gAIAd3nEgAApBg+nP0DQHpTABMAADABcPYPAClMAUwAAMAEwNk/AKQwBTABAAATAGf/AJDCFMAEAABMAJz9A0AKUwATAAAwAXD2DwApTAFMAADABMDZPwCkMAUwAQAAEwBn/wCQwhTABAAATACc/QNAClMAEwAAMAFw9g8AKUwBTAAAwATA2T8ApDAFMAEAgAQJAACQoLZfAjD+B4AONe02XgYwAQAAEwBn/wCQwhTABAAATACc/QNAClMAEwAASJAAAAAJasslAON/AOhyA5/lZQATAAAwAXD2DwApTAFMAAAgQQIAACRoVpcAjP8BoMeNfIaXAUwAACBBAgAAJGjGlwCM/wEgJ818BpcBTAAAIEECAAAkaEaXAIz/ASBnDX2alwFMAAAgQQIAACRo2pcAjP8BIKdNfRqXAUwAACBBAgAAJGhalwCM/wEg5419ipcBTAAAIEECAAAkaMqXAIz/AaAgzX0KlwFMAAAgQQIAACRoSpcAjP8BoGANfh2XAUwAACBBAgAACAAAQArWeQ+A6/8AUNAm/zz3AZgAAECCBAAAEAAAgBQ87z0Arv8DQMEb/ST3AZgAAECCBAAAEAAAgBRMeg+A6/8AUJJmv5b7AEwAACBBAgAACAAAQArWeg+A6/8AULKGv9p9ACYAAJAgAQAABAAAQAAAAEppjZsA3QAIACVt+qvcCGgCAAAJEgAAQAAAAAQAAKCUnnMToBsAAaDkjb91I6AJAAAkSAAAAAEAABAAAAABAAAoh///KQA/AQAAiTT/DT/SZwIAAAkSAABAAAAABAAAQAAAAAQAAKCgnvkxQD8CCAAmAACAAAAACAAAgAAAAAgAAIAAAAAIAACAAAAACAAAQJf0eQogAJgAAAACAAAgAAAAAgAAIAAAAAIAACAAAAACAAAgAAAAAgAAIAAAAAIAACAAAAACAAAgAAAAAgAAIAAAgAAAAAgAAIAAAACURd/Q4PBKZQAAEwAAQAAAAMoYAFwCAIAEA8DTygAA6QWAJ5UBANILAE8oAwAIAABAAgHgMWUAgPQCwKPKAAACAACQQAB4RBkAIL0A8LAyAIAAAAAkEAAeVAYASC8APKAMACAAAAAJBIBxZQCA9ALAcmUAAAEAAEggAPxaGQAgvQBwnzIAgAAAACQQAJrKAACJBYDRsZHsUcAPKQUAJGN5f+vFvWoBAMm499kAcI9aAIAAAACU193PBoC71AIAknGXAAAACQeAO9UCAJJxpwAAAAkHgDvUAgCScUffs6+GBodXxOZFagIApfbQ6NjIev2r/IPb1QQASm8s+59VA8BtagIAAgAAUD63rh4AlqkJAAgAAED53LJ6ALhZTQAgjQDQt+o/GRocfiI2L1AbACilFaNjIy9efQKQWaI2AFBaS599IQAAQDoWTxYAblIbABAAAIDyuHGyADCqNgBQ/gDQt/q/GRocfjw2v6VGAFAqj4yOjbxksglA5gY1AoDSWbTq/xEAACANC9cVABaqEQCkFwAWqBEAlM4CAQAABIDnGh0bebCyyo8JAACFtzD6+6PrmgBk5qkVAJTG9av/g8kCwHVqBQACAABQXHOnGgCy//AJ9QKAwsueADh/SgEg/sOVsblGzQCg8Nbaz/un+wsAgHIHgKvUDAAK72oBAADSc+W0AsDo2Egz26gbABTWgujny6c7AciMqB0AFNYVk/0LAQAAyuvymQaAy9UOABILAKNjI3fFZpH6AUDhLGjdzzejCUDmUjUEgMK55Pn+Zf9sfwMAoJwB4GI1BIDC+cWsAsDo2MgDFTcDAkCRXBz9+5HZTgAyF6klABTGOvv2VAPAz9USAArjwnX9B31T/Z2GBofvjs0r1BQAcq0xOjZSb9cEIHOBmgJA7k2pX08nAJynpgCQe+cLAACQlqdindvWADA6NvLgVFMFANAT50a/frTdE4DMz9QWAHJryn16ugHgJ2oLALn1044EgNGxkTtic5X6AkDuXNb6FN+OTAAyc9QYAHJnWv15JgHgbDUGgNw5p6MBYHRsZGls5qozAOTGVdGfb+30BCBzlloDQG6cOd1f0N+tPwgAKHgAGB0buTk2V6o3APTcpdGXx7o1AcicoeYA0HM/mskvEgAAoNhm1I9nHABGx0burng0MAD00tnRj5vdngBkTld7AOiZGffh2QaA02I9rP4A0HXjcfZ/Wk8CQPzBT8TmFPsAALru1Nn84v42vAEBAAC6b1b9t68d72BocHhRtrEvAKAr/nt0bOSNvZ4AZE6yLwCga06c7W/Qn5c3AgAULAC0ngnwQ/sDADru5Oi7v8rLBCBzvH0CAB3Xln7b1853NDQ4fGNs/ty+AYCOuCHO/t/Qjt+ov81v7Dj7BgA6pm19tt0B4NhYT9s/ANB2j7f6bP4CwOjYyP2xOcY+AoC2Oyb67AN5nQBkjraPAKDtjmrnb9b2ABDpZG5sLrKfAKBtzov+uiDXAaDlB/YVAOS3r/Z16p0ODQ4vjs1G9hkAzMqiOPvfpN2/aX8H3/D37TMAyGc/7WQAODLWcvsNAGas2eqnxQkAo2Mj2c8rHmHfAcCMHRH9dGXRJgCZ79l3ADAjT8Y6vFO/eUcDQKSWe4UAAJjZSXT00fsKGQBavmsfAkC++mfHA0Ckl5srPiQIAKbjqOiftxU6ALQcZl8CQH76ZlcCQKSYhbE52f4EgHU6PvrmjaUIAC2H2qcAkI9+2bUAEGlmXmxOsV8BYFIntKbm5QkALd+ybwGg932yqwEgUs382Jxo/wLAGo6NPnlDKQNAy3/axwCwhm908w/regCIdDNa6cDnGgNAgR0e/XFJqQNAy9ftawB4xspe9MWBXnylzfHG8lq1/tJ4ubn9DkDiDomz/7O6/Yf29/ALPjjWg/Y7AAlb3uqHXTfQq6+4Od5YUavWs7HHNvY/AIk6IM7+L+3FH9zX6698aHB4WWxe5RgAIDFLo/lv1Ks/vD8HBTjQMQBAgnra//ryUIGhweHLYrOlYwGARPwizv637uUb6M9JIb7qWAAgIT3ve7kIAJGCLo7NCY4HABKQPfL3MgHgN/69MvEwBAAoq8db/a7nBvJSkeZ4Y7xWrT8dL9/p+ACgpL4UZ//n5uGN9OWtMkODwzfFZmPHCAAlsyia/yZ5eTP9OSzQlx0jAJRQrvpb7gJApKMfx+aHjhMASuSU6G/nCADrtn+spx0vAJTA462+lisDeaxUc7xxf61af6zicwIAKL4vxNn/eXl7U315rtjQ4PC1sdnMsQNAQV0VzX+LPL6x/pwX7ouOHQAKLLd9bCDPVWuON26vVevrx8u3OYYAKJhvxtn/0Xl9c/0FKODnYy1zHAFQIEta/Su3ch8AIj09kfciAsBq9o3+levH2w8UoYrN8caSWrW+Qbx8s2MKgJw7Mpr/oXl/k/0FKuhnYzUcVwDk2G2tfpV7hQkAkaYejM0+ji0Acmyf6FcrivBGB4pU1eZ4Y3GtWn9FvHyLYwyAnDm8CKP/wk0AVrF3rFscZwDkyOJWfyqMwgWASFePxuYzjjUAcuQz0Z+eLNIbHihilZvjjWW1av3F8XILxxwAPXZQNP+jivam+4pc8aHB4ati83bHHgA9MhLNf8sivvH+ghf+U449AHrk6SL3oYEiV7453rinVq3/Ol5u5zgEoMs+GWf/PxMAehcC5kYI2DBevt6xCECXnBDNf/8ifwH9JdkRn6j4wCAAumNJq+8UWikCQKSwB2Kzl2MSgG6cdEbfeaToX8RAWfZGc7wxVqvWs2cEbOPYBKBDPhfN/9QyfCEDZdorEQKujBCwcbwccowC0GanRPP/XFm+mP4S7qA9Yy11nALQRjfG2qNMX1DpAkDrfoDdHasAtNHuZbjuv6qBMu6l5nijUavWm/Fye8csALO0ZzT/OWX7ogbKurciBFwfIeAP4uVmjl0AZug70fwPKuMX1lf2PTc0OHxRbLZ2DAMwTRdE89+2rF9cfwI7cLdYdzqOAZiGsVb/KK3SB4BIb7+Mza6OZQCmc/IY/ePeMn+BAynsxeZ44/ZatX53vHyPYxqAdfhYNP9zyv5FDqSyNyMEzI8Q8MJ4OezYBmASB0bz/3YKX+hASns1QsDFEQJeW/HJgQCs6cRo/v+cyhfbn+AO/kisKx3nAKzismj+u6T0BScXAGIHr4zNh2Pd7ngHINza6gtJSXECkIWARmx2jvW44x4gadnjfXeOvnC3AJBOCLgmNjs59gGStlP0g+tS/MIHUt7rzfHGklq1/j/x8t3+DgAkZ49o/qel+sUPpL73W58Z8FS8/Ct/FwCSsV80//9KuQADjoFnQsDlEQLWj5dvUw2A0vtmNP8DUi+CAPCbEHBBhIDBeLmpagCU1jHR/D+tDAl8GuB0DQ0OnxmbHVUCoHR+FM3/Q8owoV8J1vCBWBcpA0CpnK/5CwDPq/WgoGwCcLVqAJTCSKz3K4MAMJUQ8FBs3hdrgWoAFNr12ffz+L6+QikEgKmGgGYrBNykGgCFtCjWDvH9/H6lEACmGwKyRwa/N9YtqgFQKIuz798pPuJXAGhfCMg+JOI9sW5TDYBCuLnV/G9XCgFgtiFgaWXiccFCAEC+ZRPbd8f37WVKIQC0KwQsboWAW1UDILdn/tvH92uXbQWAjoSA7VoHGQD58cz3Z81fAOhkCMia/9/GulE1AHJhYfZ9uXXPFgJAR0NAdi/AtrHmqQZAT81tNf87lEIA6FYI+GUrBFyhGgA9cVmsd8X343uUQgDodgi4Lzv4Yl2gGgBddW6sv4nvw+NKMTM+DbBNhgaHz4jNB1UCoONOj8a/kzLMzoAStEdzvHFGrVp/Zbx8k2oAdMwPovnvpgwCQN5CwJwIAS+Nl5urBkDbHRLNf29lEADyGgIujBDwWLzcRjUA2mbfaP5fUwYBIO8h4IoIAXfGyx1UA2DWdovmf6QytJebADtoaHB4+9icFuulqgEwbf8ba6do/ucrRfv5McAOioP2Z7HZquLRwQDTlT3adyvNXwAocgiYH5stY/1CNQCm5MLs+2Z8/1yoFJ3jEkAXDQ0OHxeb3VQCYFJHR+PfQxk6z02AXdQcb5xTq9azl+9QDYA1fCma/77KYAJQ5knAR2NzgvoDPOPJWLtE8z9VKbrHPQA9EAf5SZWJhwW5ORBIXXaz3+aavwCQUgi4JjZvj/UT1QASdXb2fTC+H16nFN1nBJ0DQ4PDX4/N51UCSMjB0fj3UwYBQAgYHN4lNsfEeoFqACWWPSr949H8T1aK3nIJICfiL0N2U+BmsearBlBS2ah/M83fBIC1TwKyUHZUrI+pBlAiR0Xj31MZBADWHQQ+GZvvqQRQAp+I5v99ZcgXDwLKqeZ447patZ49A/vNsV6hIkABXR9rh2j+c5TCBIDpTwKyfXRErL1UAyiQI6Lxf1IZBABmHwR2rUxcEvDRwkCeZR/h+6nWA8/IMZcACqI53lhYq9bPiJcbxnq1igA5lH0Eejbyv1wpTADozDTgX2NzkEoAOfLFaPxfVwYTADo7DbiiVq1nn5e9SawNVATooeyx5h+M5n+6UpgA0N1pwMFZ8lYJoAcOisa/vzKYANCbacDFtWp9JF5uGusPVQToguyJpR+O5n+sUpgAkI9pwCGx+YJKAB3kQ3xMAMjhNOCiWrV+Sbx8XcW9AUB7Zdf6d47mf5xSmACQ72nAl2LzNZUA2mD/aPx+8sgEgIJMAy6vVetnxct6rNeoCDADP431/mj+ZyqFCQDFnAbsHpv/iFVTDWAK7o21n3G/CQDFnwbMr1XrR8fL9WJtpiLA8/hurB2j+V+rFCYAlGsasGVsvhprK9UAVpHdQPzlaPxXKoUAQLmDwD/G5iuxXq4akLS7Y/1bNP6jlSItLgEkqjnemFer1o+Ml78da3MVgSRlz+7/QDT/uUphAkCa04Ch2BwQ60OqAUk4LdbXovHfpBQCAGRBYNvYZM8P2EI1oJSyx4YfGI3/50qBAMDagsCuscke9bmhakApLKlMfHDPiUqBAMBUgsC/VCY+adDzA6CYsp/nPyQa/2FKwercBMikmuONa2rV+vfi5ZOx3lqZuGEQyL8HYx0Y60PR/K9SDkwAmM004Pdis2+sz8V6gYpALj0W61uxvhGNf1w5EABoZxDInhvw2Vj7VEyQIC+eiPXtrPlH4/+VciAA0OkgkN0jsHesF6oI9MSKWN+JdajGjwBAt4PA78fmM7E+HWt9FYGuuL8y8cz+w6LxL1cOBAB6GQR+pxUCPhXrlSoCHXFHrOzG3O9G439MORAAyFsY2CM2/xRrU9WAtpgf64ho+scoBQIARQgC74vNXrHepRowI+fF+n40/jlKgQBAEYNA9gyBPWPtrhqwTitjHRXrB9H45ykHAgBlCAIva4WAj8d6lYrAc9wS69hYR0fjv085EAAoaxj4QGz+Idb2qkHifhLruGj6ZykFAgApBYHXxib78KFdYm2gIiTizljZB/McH43/ZuVAACD1MPDB2Hw01g6qQUllZ/knRdM/UykQAGDNIPDHsflwrJ0rfpSQ4lsQ69RYp0Tjv0s5EABgamHgbbH5+1h/F+uPVISC+GWsH8Y6PZr+XOVAAIDZhYHtYpNdJshuIPxdFSFnsk/f+3GsH0XTP185EACgM2Fgx9hkK3vY0HoqQo88EOvsWGdF0z9bORAAoLthILtp8L2x3hPrZSpChzUrEz+6N8cT+hAAID9hYOvKxLMFsssFr1UR2mRJrHNj/TSa/iXKgQAA+Q4Dr4/NtpWJzyLYWkWYpotiZdfyz4+mf6NyIABAMcNAdp/AX8faphUGNlQVVrM01sWxLsxWNP2HlQQBAMoXCF4Tm3fGekesrSp+xDBF2c/kXxbr0liXRMNfpiQIAJBeIBiKzXCsv4y1Ray6qpTO7bGujHVFrBFjfQQAYG2B4M9i8/bW+otYb1GVwrku1rWxrs5WNPwxJQEBAKYbCF4Um7e2gsCbY70p1sYqkxs3xZofa16s67PmHw3/MWUBAQA6EQqyGwvfGOsNsTaJlf3UQXYp4SWq0zHZjXmLWuuGWAtjLYhm/5DSgAAAvQ4Gr47N61oTgo0qE88jyFZVdabs/ljZx+Quaa3F2Vm+G/VAAIAiBoOXxyYLB69qrcFYf1qZuOHwTxIsSSPWHbHGWuu2WFmDXxaNvumIgc76P2ILSTcYfI7iAAAAAElFTkSuQmCC" />
     <style>
-        html{
+        html {
             font-family: monospace;
         }
-        body{
+
+        body {
             margin: 0 auto;
         }
-        #maingrid{
+
+        #maingrid {
             display: grid;
             justify-content: center;
         }
-        #maingridtop, #maingridbottom{
+
+        #maingridtop,
+        #maingridbottom {
             overflow-y: auto;
         }
-        #maingridtop{
+
+        #maingridtop {
             background: rgba(255, 255, 255, 0.577);
             color: #2c213d;
             height: 50vh;
@@ -31,10 +37,13 @@
             justify-content: center;
             align-content: space-evenly;
         }
-        #maingridtop, #inputtable{
+
+        #maingridtop,
+        #inputtable {
             font-size: 1.2em;
         }
-        #maingridbottom{
+
+        #maingridbottom {
             background: #2c213d;
             height: 50vh;
             width: 100vw;
@@ -42,34 +51,44 @@
             justify-content: center;
             justify-items: center;
             align-content: center;
-            
+
         }
-        #maingridbottom, #resulttable{
+
+        #maingridbottom,
+        #resulttable {
             color: white;
             font-size: x-large;
         }
-        #prevfwdbuttoncluster button{
+
+        #prevfwdbuttoncluster button {
             display: inline-block;
         }
-        #prevfwdbuttoncluster{
+
+        #prevfwdbuttoncluster {
             margin-top: 10px;
             display: grid;
             justify-items: stretch;
             grid-column-gap: 5px;
             grid-row-gap: 5px;
         }
-        button{
+
+        button {
             padding: 10px;
         }
-        #inputtable{
+
+        #inputtable {
             margin-left: 10px;
             margin-right: 10px;
             color: #2c213d;
         }
-        h1, h2, h3{
+
+        h1,
+        h2,
+        h3 {
             text-align: center;
         }
-        .skeuButton{
+
+        .skeuButton {
             background: white;
             color: #2c213d;
             box-shadow: 2px 2px 4px #80808080, -2px -2px 4px #ffffff6b;
@@ -79,14 +98,17 @@
             cursor: pointer;
             user-select: none;
         }
-        .skeuButton:active{
+
+        .skeuButton:active {
             color: darkblue;
             box-shadow: inset 2px 2px 4px #80808080, inset -2px -2px 4px #ffffff6b;
         }
-        .skeuButton:hover{
+
+        .skeuButton:hover {
             border: 1px solid rgb(217, 217, 217);
         }
-        #centralCircle{
+
+        #centralCircle {
             width: 60vw;
             height: 60vw;
             background: orange;
@@ -99,210 +121,239 @@
         }
     </style>
 </head>
+
 <body>
 
-<div id="maingrid">
-    <div id="centralCircle"></div>
+    <div id="maingrid">
+        <div id="centralCircle"></div>
 
-    <div id="maingridtop">
-        <h1>Sunrise/Sunset Calculator</h1>
+        <div id="maingridtop">
+            <h1>Sunrise/Sunset Calculator</h1>
 
-        <table id="inputtable">
-            <tr><td colspan=2><h2>Input</h2></td></tr>
-            <tr><td>Latitude</td><td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td></tr>
-            <tr><td>Longitude</td><td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td></tr>
-            <tr><td>Date</td><td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td></tr>
-            <tr><td colspan=2>
-                <div id="prevfwdbuttoncluster">
-                    <button class="skeuButton" onclick="readInputsDoThing()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 1;">Go</button>
-                    <button class="skeuButton" onclick="askNicelyForLocation()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 2;">Ask location test</button>
-                    <button class="skeuButton" onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1; grid-row-start: 3;">Previous</button>
-                    <button class="skeuButton" onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2; grid-row-start: 3;">Today</button>
-                    <button class="skeuButton" onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3; grid-row-start: 3;">Next</button>
-                </div>
-            </td></tr>
-        </table>
+            <table id="inputtable">
+                <tr>
+                    <td colspan=2>
+                        <h2>Input</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Latitude</td>
+                    <td><input type="number" id="latitude" value="51.48" oninput="readInputsDoThing()" /></td>
+                </tr>
+                <tr>
+                    <td>Longitude</td>
+                    <td><input type="number" id="longitude" value="0" oninput="readInputsDoThing()" /></td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><input type="date" id="inputdate" oninput="readInputsDoThing()" /></td>
+                </tr>
+                <tr>
+                    <td colspan=2>
+                        <div id="prevfwdbuttoncluster">
+                            <button class="skeuButton" onclick="readInputsDoThing()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 1;">Go</button>
+                            <button class="skeuButton" onclick="askNicelyForLocation()" style="display: none; grid-column-start: 1; grid-column-end: 4; grid-row-start: 2;">Ask location test</button>
+                            <button class="skeuButton" onclick="incrementDateInput(-1); readInputsDoThing()" style="grid-column-start: 1; grid-row-start: 3;">Previous</button>
+                            <button class="skeuButton" onclick="initDateInput(); readInputsDoThing()" style="grid-column-start: 2; grid-row-start: 3;">Today</button>
+                            <button class="skeuButton" onclick="incrementDateInput(1); readInputsDoThing()" style="grid-column-start: 3; grid-row-start: 3;">Next</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
-        
-    </div>
-    <div id="maingridbottom">
-        <h2>Result</h2>
-        <table id="resulttable">
-            <tr><td><div class="sunlabel">▲</div></td><td style="text-align: center; padding: 0.3em;"><span id="sunriseResult"></span></td></tr>
-            <tr><td><div class="sunlabel">▼</div></td><td style="text-align: center; padding: 0.3em;"><span id="sunsetResult"></span></td></tr>
-            <tr><td colspan=2 style="text-align: center; font-size: medium"><span id="daylightHoursResult"></span> daylight hours</td></tr>
-        </table>
-    </div>
+
+        </div>
+        <div id="maingridbottom">
+            <h2>Result</h2>
+            <table id="resulttable">
+                <tr>
+                    <td>
+                        <div class="sunlabel">▲</div>
+                    </td>
+                    <td style="text-align: center; padding: 0.3em;"><span id="sunriseResult"></span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="sunlabel">▼</div>
+                    </td>
+                    <td style="text-align: center; padding: 0.3em;"><span id="sunsetResult"></span></td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="text-align: center; font-size: medium"><span id="daylightHoursResult"></span> daylight hours</td>
+                </tr>
+            </table>
+        </div>
 
 </body>
 <script>
-'use strict'
+    'use strict'
 
-  
-// trig stuff
- 
-// translates degrees to radians
-function sind(angleDegrees){
-    return Math.sin(angleDegrees*Math.PI/180);
-};
 
-function cosd(angleDegrees){
-    return Math.cos(angleDegrees*Math.PI/180);
-};
-    
- 
- // sunrise equation stuff
+    // trig stuff
 
-// days since epoch
-// epoch = 2000-01-01 12:00
-// n
-function getJulianDay(inputDate){
-    var epoch = new Date("2000-01-01T12:00:00");
-    var now = new Date();
-    var datediff = Math.round(((inputDate ? inputDate : now) - epoch) / (1000 * 60 * 60 * 24))
-    return datediff
-}
+    // translates degrees to radians
+    function sind(angleDegrees) {
+        return Math.sin(angleDegrees * Math.PI / 180);
+    };
 
-// Julian day to datetime object
-function julianToDatetime(julianDay){
-    var dateObj = new Date((julianDay-2440587.5)*864e5);
-    return dateObj
-}
+    function cosd(angleDegrees) {
+        return Math.cos(angleDegrees * Math.PI / 180);
+    };
 
-// Mean Solar Time
-// J*
-function getMeanSolarTime(longitude, inputDate){
-    return getJulianDay(inputDate) - (longitude / 360)
-}
 
-// Solar mean anomaly
-// M
-function getSolarMeanAnomaly(longitude, inputDate){
-    return (357.5291 + (0.98560028 * getMeanSolarTime(longitude, inputDate))) % 360
-}
+    // sunrise equation stuff
 
-// Equation of the centre
-// C
-function getEquationOfTheCentre(longitude, inputDate){
-    var sma = getSolarMeanAnomaly(longitude, inputDate);
-    var coefficientEarthEOC = 1.9148;
-    return (coefficientEarthEOC * sind(sma)) + (0.0200 * sind(2 * sma)) + (0.0003 * sind(3 * sma))
-}
+    // days since epoch
+    // epoch = 2000-01-01 12:00
+    // n
+    function getJulianDay(inputDate) {
+        var epoch = new Date("2000-01-01T12:00:00");
+        var now = new Date();
+        var datediff = Math.round(((inputDate ? inputDate : now) - epoch) / (1000 * 60 * 60 * 24))
+        return datediff
+    }
 
-// Ecliptic longitude
-// lambda
-function getEclipticLongitude(longitude, inputDate){
-    var argumentOfPerihelion = 102.9372;
-    var solarMeanAnomaly = getSolarMeanAnomaly(longitude, inputDate);
-    var equationOfTheCentre = getEquationOfTheCentre(longitude, inputDate);
-    return (solarMeanAnomaly + equationOfTheCentre + 180 + argumentOfPerihelion) % 360
-}
+    // Julian day to datetime object
+    function julianToDatetime(julianDay) {
+        var dateObj = new Date((julianDay - 2440587.5) * 864e5);
+        return dateObj
+    }
 
-// Solar transit
-// Jtransit
-function getSolarTransit(longitude, inputDate){
-    var noon = 2451545.0; // noon of the equivalent Julian year reference
-    var sma = getSolarMeanAnomaly(longitude, inputDate);
-    var lambda = getEclipticLongitude(longitude, inputDate);
-    var meanSolarTime = getMeanSolarTime(longitude, inputDate);
-    var equationOfTime = (0.0053 * sind(sma)) - (0.0069 * sind(2 * lambda)); // simplified version, apparently
-    return noon + meanSolarTime + equationOfTime
-}
+    // Mean Solar Time
+    // J*
+    function getMeanSolarTime(longitude, inputDate) {
+        return getJulianDay(inputDate) - (longitude / 360)
+    }
 
-// Declination of the Sun
-// sin delta
-function getDeclinationOfSun(longitude, inputDate){
-    var lambda = getEclipticLongitude(longitude, inputDate);
-    var sinDelta = sind(lambda) * sind(23.44);
-    return sinDelta
-}
+    // Solar mean anomaly
+    // M
+    function getSolarMeanAnomaly(longitude, inputDate) {
+        return (357.5291 + (0.98560028 * getMeanSolarTime(longitude, inputDate))) % 360
+    }
 
-// Hour angle
-// omega nought
-// not bothering with elevation correction
-function getHourAngle(northLatitude, longitude, inputDate){
-    var sunDeclination = getDeclinationOfSun(longitude, inputDate);
-    var numerator = sind(-0.83) - (sind(northLatitude) * sunDeclination);
-    var denominator = cosd(northLatitude) * Math.cos(Math.asin(sunDeclination));
-    return Math.acos(numerator / denominator) / (Math.PI/180)
-}
+    // Equation of the centre
+    // C
+    function getEquationOfTheCentre(longitude, inputDate) {
+        var sma = getSolarMeanAnomaly(longitude, inputDate);
+        var coefficientEarthEOC = 1.9148;
+        return (coefficientEarthEOC * sind(sma)) + (0.0200 * sind(2 * sma)) + (0.0003 * sind(3 * sma))
+    }
 
-// takes in latitude, longitude and a date object
-// returns an object with sunrise and sunset keys
-// defaults to today if no inputDate provided
-function getSunriseSunset(northLatitude, longitude, inputDate){
-    var solarTransit = getSolarTransit(longitude, inputDate);
-    var hourAngle = getHourAngle(northLatitude, longitude, inputDate);
-    var sunrise = solarTransit - (hourAngle / 360); // Julian date of sunrise
-    var sunset = solarTransit + (hourAngle / 360); // Julian date of sunset
-    // convert to something actually usable
-    var sunrise = julianToDatetime(sunrise);
-    var sunset = julianToDatetime(sunset);
-    return {"sunrise": sunrise, "sunset": sunset}
-}
-    
+    // Ecliptic longitude
+    // lambda
+    function getEclipticLongitude(longitude, inputDate) {
+        var argumentOfPerihelion = 102.9372;
+        var solarMeanAnomaly = getSolarMeanAnomaly(longitude, inputDate);
+        var equationOfTheCentre = getEquationOfTheCentre(longitude, inputDate);
+        return (solarMeanAnomaly + equationOfTheCentre + 180 + argumentOfPerihelion) % 360
+    }
 
-// UI stuff
+    // Solar transit
+    // Jtransit
+    function getSolarTransit(longitude, inputDate) {
+        var noon = 2451545.0; // noon of the equivalent Julian year reference
+        var sma = getSolarMeanAnomaly(longitude, inputDate);
+        var lambda = getEclipticLongitude(longitude, inputDate);
+        var meanSolarTime = getMeanSolarTime(longitude, inputDate);
+        var equationOfTime = (0.0053 * sind(sma)) - (0.0069 * sind(2 * lambda)); // simplified version, apparently
+        return noon + meanSolarTime + equationOfTime
+    }
 
-function readInputsDoThing(){
-    var latitude = parseFloat(document.getElementById("latitude").value);
-    var longitude = parseFloat(document.getElementById("longitude").value);
-    var inputDate = new Date(document.getElementById("inputdate").value);
-    var result = getSunriseSunset(latitude, longitude, inputDate);
-    var sunrise = result["sunrise"];
-    var sunset = result["sunset"];
-    var daylight = +((sunset - sunrise) / 1000 / 60 / 60).toFixed(2); // the plus gets rid of trailing zeros. Decimal hours isn't really elegant here, but whatever
+    // Declination of the Sun
+    // sin delta
+    function getDeclinationOfSun(longitude, inputDate) {
+        var lambda = getEclipticLongitude(longitude, inputDate);
+        var sinDelta = sind(lambda) * sind(23.44);
+        return sinDelta
+    }
 
-    document.getElementById("sunriseResult").innerText = sunrise;
-    document.getElementById("sunsetResult").innerText = sunset;
-    document.getElementById("daylightHoursResult").innerText = daylight;
-}
+    // Hour angle
+    // omega nought
+    // not bothering with elevation correction
+    function getHourAngle(northLatitude, longitude, inputDate) {
+        var sunDeclination = getDeclinationOfSun(longitude, inputDate);
+        var numerator = sind(-0.83) - (sind(northLatitude) * sunDeclination);
+        var denominator = cosd(northLatitude) * Math.cos(Math.asin(sunDeclination));
+        return Math.acos(numerator / denominator) / (Math.PI / 180)
+    }
 
-function initDateInput(){
-    var now = new Date();
-    document.getElementById("inputdate").valueAsDate = now;
-}
+    // takes in latitude, longitude and a date object
+    // returns an object with sunrise and sunset keys
+    // defaults to today if no inputDate provided
+    function getSunriseSunset(northLatitude, longitude, inputDate) {
+        var solarTransit = getSolarTransit(longitude, inputDate);
+        var hourAngle = getHourAngle(northLatitude, longitude, inputDate);
+        var sunrise = solarTransit - (hourAngle / 360); // Julian date of sunrise
+        var sunset = solarTransit + (hourAngle / 360); // Julian date of sunset
+        // convert to something actually usable
+        var sunrise = julianToDatetime(sunrise);
+        var sunset = julianToDatetime(sunset);
+        return { "sunrise": sunrise, "sunset": sunset }
+    }
 
-function incrementDateInput(inputDays){
-    `
+
+    // UI stuff
+
+    function readInputsDoThing() {
+        var latitude = parseFloat(document.getElementById("latitude").value);
+        var longitude = parseFloat(document.getElementById("longitude").value);
+        var inputDate = new Date(document.getElementById("inputdate").value);
+        var result = getSunriseSunset(latitude, longitude, inputDate);
+        var sunrise = result["sunrise"];
+        var sunset = result["sunset"];
+        var daylight = +((sunset - sunrise) / 1000 / 60 / 60).toFixed(2); // the plus gets rid of trailing zeros. Decimal hours isn't really elegant here, but whatever
+
+        document.getElementById("sunriseResult").innerText = sunrise;
+        document.getElementById("sunsetResult").innerText = sunset;
+        document.getElementById("daylightHoursResult").innerText = daylight;
+    }
+
+    function initDateInput() {
+        var now = new Date();
+        document.getElementById("inputdate").valueAsDate = now;
+    }
+
+    function incrementDateInput(inputDays) {
+        `
     Increment the date value by the input number of days.
     Accepts negative values
     `
-    var inputDateState = document.getElementById("inputdate").valueAsDate
-    inputDateState.setDate(inputDateState.getDate() + inputDays);
-     document.getElementById("inputdate").valueAsDate = inputDateState;
-}
-
-function askNicelyForLocation(){
-    navigator.geolocation.getCurrentPosition((position)=> {
-        const p=position.coords;
-        console.log(p.latitude,p.longitude);
-    })
-}
-
-// function to read url parameters and do stuff with them
-function url_param_handler(){
-    var url_string = window.location.href
-    var url = new URL(url_string)
-    var lat = url.searchParams.get("lat")
-    if (lat){
-      document.getElementById("latitude").value = lat
+        var inputDateState = document.getElementById("inputdate").valueAsDate
+        inputDateState.setDate(inputDateState.getDate() + inputDays);
+        document.getElementById("inputdate").valueAsDate = inputDateState;
     }
-    var lon = url.searchParams.get("lon")
-    if (lon){
-      document.getElementById("longitude").value = lon
+
+    function askNicelyForLocation() {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const p = position.coords;
+            console.log(p.latitude, p.longitude);
+        })
     }
-  }
 
- 
- // init
- 
-function init(){
-    url_param_handler();
-    initDateInput();
-    readInputsDoThing();
-}
+    // function to read url parameters and do stuff with them
+    function url_param_handler() {
+        var url_string = window.location.href
+        var url = new URL(url_string)
+        var lat = url.searchParams.get("lat")
+        if (lat) {
+            document.getElementById("latitude").value = lat
+        }
+        var lon = url.searchParams.get("lon")
+        if (lon) {
+            document.getElementById("longitude").value = lon
+        }
+    }
 
-init();
+
+    // init
+
+    function init() {
+        url_param_handler();
+        initDateInput();
+        readInputsDoThing();
+    }
+
+    init();
 </script>
+
 </html>
