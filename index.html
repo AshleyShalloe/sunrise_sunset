@@ -319,7 +319,7 @@
     Accepts negative values
     `
         var inputDateState = document.getElementById("inputdate").valueAsDate
-        inputDateState.setDate(inputDateState.getDate() + inputDays);
+        inputDateState.setUTCDate(inputDateState.getUTCDate() + inputDays);
         document.getElementById("inputdate").valueAsDate = inputDateState;
     }
 
